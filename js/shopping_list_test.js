@@ -20,7 +20,7 @@ describe('ShoppingListItem', function() {
     (new ShoppingListItem()).hasOwnProperty('description').should.equal(true);
   });
 
-  it('should have a property named "is_done"', function() {
+  it('should have a property named "is_done"', function () {
     (new ShoppingListItem()).hasOwnProperty('is_done').should.equal(true);
   });
 
