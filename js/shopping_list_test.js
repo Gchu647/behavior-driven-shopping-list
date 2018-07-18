@@ -88,7 +88,6 @@ describe('ShoppingList', function () {
     (itemLastIndex instanceof ShoppingListItem).should.equal(true);
 
     // Test if obj throws error
-    expect(() => list.addItem()).to.throw();
-    console.log(list);
+    expect(() => list.addItem()).to.throw('Error!');
   });
 });
