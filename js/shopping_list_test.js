@@ -32,4 +32,20 @@ describe('ShoppingListItem', function() {
     itemNull.name.should.be.a('string');
     itemObject.description.should.not.be.a('string');
   });
+
+  it('should have a method named "check"', function(){
+    const item = new ShoppingListItem('Apple', 'Sweet');
+
+    item.check.should.be.a("function");
+    item.check();
+    item.is_done.should.equal(true);
+  });
+
+  it('should have a method named "uncheck"', function(){
+    const item = new ShoppingListItem('Apple', 'Sweet');
+
+    item.uncheck.should.be.a("function");
+    item.uncheck();
+    item.is_done.should.equal(false);
+  });
 });
