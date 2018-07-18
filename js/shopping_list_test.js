@@ -53,7 +53,7 @@ describe('ShoppingListItem', function() {
     item.render.should.be.a('function');
     item
       .render()
-      .should.equal('<li class="completed_undefined"><span>Apple</span> <span>Sweet</span></li>');
+      .should.equal('<li class="completed_false"><span>Apple</span> <span>Sweet</span></li>');
     item.check();
     item
       .render()
