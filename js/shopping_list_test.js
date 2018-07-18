@@ -56,3 +56,23 @@ describe('ShoppingListItem', function() {
     item.render().should.equal('<li class="completed_true"><span>Apple</span> <span>Sweet</span></li>');
   });
 });
+
+describe('ShoppingList', function() {
+  let list;
+
+  beforeEach(function() {
+    list = new ShoppingList();
+  })
+
+  it('should be a Class', function() {
+    (new ShoppingList().constructor === ShoppingList.prototype.constructor).should.equal(true);
+  });
+
+  it('should have a property named "items"', function() {
+    (new ShoppingListItem()).hasOwnProperty('items').should.equal(true);
+  });
+
+  it('should initialize "items" as an empty Array', function () {
+    list.items.should.equal([]);
+  });
+});
