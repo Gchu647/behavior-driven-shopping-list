@@ -90,4 +90,21 @@ describe('ShoppingList', function () {
     // Test if obj throws error
     expect(() => list.addItem()).to.throw('Error!');
   });
+
+  it('should have an "removeItem" method', function () {
+    // Test if obj pushed in is a ShoppingList item
+    // let itemLastIndex = list.items[list.items.length - 1];
+    list.addItem(apple);
+    list.addItem(apple);
+    list.addItem(apple);
+    list.items.length.should.equal(3);
+    list.removeItem();
+    list.items.length.should.equal(2);
+    list.removeItem(apple);
+    list.items.length.should.equal(1);
+
+    // Test if obj throws error
+    expect(() => list.removeItem(donuts)).to.throw('Error!');
+  });
+
 });
