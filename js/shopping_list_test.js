@@ -17,4 +17,19 @@ describe('ShoppingListItem', function() {
   it('should have a property named "is_done"', function() {
     (new ShoppingListItem()).hasOwnProperty('is_done').should.equal(true);
   });
+
+  it('should accept 2 arguments: name and description', function() {
+    const item = new ShoppingListItem('Apple', 'Sweet');
+
+    item.name.should.equal('Apple');
+    item.description.should.equal('Sweet');
+  });
+
+  it('should only accept strings as arguments', function() {
+    const itemNull = new ShoppingListItem('Apple', null);
+    const itemObject = new ShoppingListItem('Apple', {});
+
+    itemNull.name.should.be.a('string');
+    itemObject.description.should.not.be.a('string');
+  });
 });
