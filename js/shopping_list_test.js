@@ -107,4 +107,14 @@ describe('ShoppingList', function () {
     expect(() => list.removeItem(donuts)).to.throw('Error!');
   });
 
+    it('should have render method that lists items in ul format', function() {  
+      list.addItem(apple);
+      list.addItem(apple);
+      list.addItem(apple);
+
+      list.render().should.equal(
+        `<ul>${list.items[0].render()}${list.items[1].render()}${list.items[2].render()}</ul>`
+      )
+    });
+
 });
