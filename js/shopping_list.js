@@ -21,4 +21,16 @@ class ShoppingList {
       throw new Error('Error!');
     }
   }
+
+  render() {
+    let str = '<ul>';
+
+    this.items.forEach(item => {
+      str += item.render();
+    });
+
+    str += '</ul>'
+
+    return str;
+  }
 }

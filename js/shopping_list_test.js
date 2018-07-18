@@ -107,7 +107,7 @@ describe('ShoppingList', function () {
     expect(() => list.removeItem(donuts)).to.throw('Error!');
   });
 
-    it('should have render method that lists items in ul format', function() {  
+    it('should have render method that lists items in ul format', function() {
       list.addItem(apple);
       list.addItem(apple);
       list.addItem(apple);
