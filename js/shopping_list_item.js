@@ -12,4 +12,10 @@ class ShoppingListItem {
   uncheck() {
     this.is_done = false;
   }
+
+  render() {
+    let str = `<li class="completed_${this.is_done}"><span>${this.name}</span> <span>${this.description}</span></li>`;
+
+    return str;
+  }
 }

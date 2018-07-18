@@ -51,9 +51,8 @@ describe('ShoppingListItem', function() {
 
   it('should have a method named "render" that constructs HTML string with <li> tags', function () {
     item.render.should.be.a('function');
-
-    const htmlString = item.render();
-    htmlString.startsWith('<li').should.equal(true);
-    htmlString.endsWith('</li>').should.equal(true);
+    item.render().should.equal('<li class="completed_undefined"><span>Apple</span> <span>Sweet</span></li>');
+    item.check();
+    item.render().should.equal('<li class="completed_true"><span>Apple</span> <span>Sweet</span></li>');
   });
 });
