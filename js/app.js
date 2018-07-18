@@ -12,14 +12,17 @@
     content.innerHTML = list.render();
   };
 
-  w.changeCheckedStatus = function(idx, checkbox) {
+  w.changeCheckedStatus = function(event, idx) {
+    console.log(event);
+    console.log(idx);
     let item = list.items[idx];
-    if (checkbox.checked) {
-      item.uncheck();
-      console.log('uncheck');
-    } else {
+    if (event.target.checked) {
       item.check();
       console.log('check');
+    } else {
+      item.uncheck();
+      console.log('uncheck');
     }
+    content.innerHTML = list.render();
   }
 })(window);
