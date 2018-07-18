@@ -11,4 +11,15 @@
     list.addItem(new_shopping_list_item);
     content.innerHTML = list.render();
   };
+
+  w.changeCheckedStatus = function(idx, checkbox) {
+    let item = list.items[idx];
+    if (checkbox.checked) {
+      item.uncheck();
+      console.log('uncheck');
+    } else {
+      item.check();
+      console.log('check');
+    }
+  }
 })(window);

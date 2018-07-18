@@ -13,8 +13,10 @@ class ShoppingListItem {
     this.is_done = false;
   }
 
-  render() {
-    let str = `<li class="completed_${this.is_done}"><span>${this.name}</span> <span>${this.description}</span></li>`;
+  render(idx) {
+    let str = `<li class="completed_${this.is_done}"><input type="checkbox" onchange="changeCheckedStatus(${idx}, checkbox)"><span>${this.name}</span> <span>${this.description}</span></li>`;
+
+    console.log(document.querySelectorAll('input[type="checkbox"]'));
 
     return str;
   }

@@ -25,8 +25,8 @@ class ShoppingList {
   render() {
     let str = '<ul>';
 
-    this.items.forEach(item => {
-      str += item.render();
+    this.items.forEach((item, idx) => {
+      str += item.render(idx);
     });
 
     str += '</ul>';
