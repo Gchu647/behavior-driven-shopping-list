@@ -1,17 +1,12 @@
-describe("ShoppingListItem", function(){
-  let shopList;
+const expect = chai.expect;
+const should = chai.should();
 
-  function isClass(func) {
-    return typeof func === 'function'
-      && /^class\s/.test(Function.prototype.toString.call(func));
-  }
-
-  this.before(function() {
-    shopList = new ShoppingListItem();
+describe('ShoppingListItem', function() {
+  it('should be a Class', function() {
+    (new ShoppingListItem().constructor === ShoppingListItem.prototype.constructor).should.equal(true);
   });
 
-  it("should be a Class", function() {
-    isClass(shopList).should.equal(true);
+  it('should have a property named "name"', function() {
+    (new ShoppingListItem()).hasOwnProperty('name').should.equal(true);
   });
-
 });
