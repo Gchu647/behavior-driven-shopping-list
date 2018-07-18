@@ -69,7 +69,7 @@ describe('ShoppingList', function() {
   });
 
   it('should have a property named "items"', function() {
-    (new ShoppingListItem()).hasOwnProperty('items').should.equal(true);
+    (new ShoppingList()).hasOwnProperty('items').should.equal(true);
   });
 
   it('should initialize "items" as an empty Array', function () {
