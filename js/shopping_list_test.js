@@ -57,22 +57,22 @@ describe('ShoppingListItem', function() {
   });
 });
 
-describe('ShoppingList', function() {
+describe('ShoppingList', function () {
   let list;
   let apple;
   let donuts;
 
-  beforeEach(function() {
+  beforeEach(function () {
     list = new ShoppingList();
     apple = new ShoppingListItem('Apple', 'Sweet');
     donuts = {}; // Not Shopping List Item
   })
 
-  it('should be a Class', function() {
+  it('should be a Class', function () {
     (new ShoppingList().constructor === ShoppingList.prototype.constructor).should.equal(true);
   });
 
-  it('should have a property named "items"', function() {
+  it('should have a property named "items"', function () {
     (new ShoppingList()).hasOwnProperty('items').should.equal(true);
   });
 
@@ -81,16 +81,14 @@ describe('ShoppingList', function() {
     list.items.should.be.empty;
   });
 
-  it('should have an "addItem" method', function() {
+  it('should have an "addItem" method', function () {
     // Test if obj pushed in is a ShoppingList item
     list.addItem(apple);
     let itemLastIndex = list.items[list.items.length - 1];
     (itemLastIndex instanceof ShoppingListItem).should.equal(true);
 
-    // Test if obj pushed in is NOT a ShoppingList item
-    list.addItem(donuts);
-    itemLastIndex = list.items[list.items.length - 1];
-    (itemLastIndex instanceof ShoppingListItem).should.equal(false);
-    expect(list.addItem(donuts)).to.throw("Error!");
+    // Test if obj throws error
+    expect(() => list.addItem()).to.throw();
+    console.log(list);
   });
 });
