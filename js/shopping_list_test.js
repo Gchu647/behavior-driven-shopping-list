@@ -9,7 +9,7 @@ describe('ShoppingListItem', function() {
   it('should have a property named "name"', function() {
     (new ShoppingListItem()).hasOwnProperty('name').should.equal(true);
   });
-  
+
   it('should have a property named "description"', function() {
     (new ShoppingListItem()).hasOwnProperty('description').should.equal(true);
   });
