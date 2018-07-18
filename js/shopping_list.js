@@ -29,7 +29,7 @@ class ShoppingList {
       str += item.render();
     });
 
-    str += '</ul>'
+    str += '</ul>';
 
     return str;
   }
