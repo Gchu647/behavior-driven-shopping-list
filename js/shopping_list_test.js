@@ -59,9 +59,13 @@ describe('ShoppingListItem', function() {
 
 describe('ShoppingList', function() {
   let list;
+  let apple;
+  let donuts;
 
   beforeEach(function() {
     list = new ShoppingList();
+    apple = new ShoppingListItem('Apple', 'Sweet');
+    donuts = {}; // Not Shopping List Item
   })
 
   it('should be a Class', function() {
@@ -75,5 +79,18 @@ describe('ShoppingList', function() {
   it('should initialize "items" as an empty Array', function () {
     Array.isArray(list.items).should.equal(true);
     list.items.should.be.empty;
+  });
+
+  it('should have an "addItem" method', function() {
+    // Test if obj pushed in is a ShoppingList item
+    list.addItem(apple);
+    let itemLastIndex = list.items[list.items.length - 1];
+    (itemLastIndex instanceof ShoppingListItem).should.equal(true);
+
+    // Test if obj pushed in is NOT a ShoppingList item
+    list.addItem(donuts);
+    itemLastIndex = list.items[list.items.length - 1];
+    (itemLastIndex instanceof ShoppingListItem).should.equal(false);
+    expect(list.addItem(donuts)).to.throw("Error!");
   });
 });
