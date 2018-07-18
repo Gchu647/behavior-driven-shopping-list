@@ -14,7 +14,7 @@
 
   w.changeCheckedStatus = function(event, idx) {
     console.log(event);
-    console.log(idx);
+
     let item = list.items[idx];
     if (event.target.checked) {
       item.check();
