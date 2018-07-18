@@ -73,6 +73,7 @@ describe('ShoppingList', function() {
   });
 
   it('should initialize "items" as an empty Array', function () {
-    list.items.should.equal([]);
+    Array.isArray(list.items).should.equal(true);
+    list.items.should.be.empty;
   });
 });
