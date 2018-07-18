@@ -1,11 +1,13 @@
 describe("ShoppingListItem", function(){
+  let shopList;
+
   function isClass(func) {
     return typeof func === 'function'
       && /^class\s/.test(Function.prototype.toString.call(func));
   }
 
   this.before(function() {
-    let shopList = new ShoppingListItem();
+    shopList = new ShoppingListItem();
   });
 
   it("should be a Class", function() {
