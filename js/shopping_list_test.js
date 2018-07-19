@@ -53,11 +53,11 @@ describe('ShoppingListItem', function() {
     item.render.should.be.a('function');
     item
       .render()
-      .should.equal('<li class="completed_false"><span>Apple</span> <span>Sweet</span></li>');
+      .should.equal('<li class="completed_false"><input type="checkbox"  onchange="changeCheckedStatus(event, undefined)"><span>Apple</span> <span>Sweet</span> <button onclick="removeItemButtonClicked(undefined)">X</button></li>');
     item.check();
     item
       .render()
-      .should.equal('<li class="completed_true"><span>Apple</span> <span>Sweet</span></li>');
+      .should.equal('<li class="completed_true"><input type="checkbox" checked onchange="changeCheckedStatus(event, undefined)"><span>Apple</span> <span>Sweet</span> <button onclick="removeItemButtonClicked(undefined)">X</button></li>');
   });
 });
 
@@ -118,6 +118,6 @@ describe('ShoppingList', function() {
 
     list
       .render()
-      .should.equal(`<ul>${list.items[0].render()}${list.items[1].render()}${list.items[2].render()}</ul>`);
+      .should.equal(`<ul>${list.items[0].render(0)}${list.items[1].render(1)}${list.items[2].render(2)}</ul>`);
   });
 });
