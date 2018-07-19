@@ -52,13 +52,9 @@ describe('ShoppingListItem', function() {
 
   it('should have a method named "render" that constructs HTML string with <li> tags', function() {
     item.render.should.be.a('function');
-    item
-      .render()
-      .should.equal('<li class="completed_false"><input type="checkbox"  onchange="changeCheckedStatus(event, undefined)"><span>Apple</span> <span>(<em>Sweet</em>)</span> <button onclick="removeItemButtonClicked(undefined)"><span class="remove-button">X</span></button></li>');
+    item.render().should.equal('<li class="completed_false"><input type="checkbox"  onchange="changeCheckedStatus(event, undefined)"><span>Apple</span> <span>(<em>Sweet</em>)</span> <button onclick="removeItemButtonClicked(undefined)"><span class="remove-button">X</span></button></li>');
     item.check();
-    item
-      .render()
-      .should.equal('<li class="completed_true"><input type="checkbox" checked onchange="changeCheckedStatus(event, undefined)"><span>Apple</span> <span>(<em>Sweet</em>)</span> <button onclick="removeItemButtonClicked(undefined)"><span class="remove-button">X</span></button></li>');
+    item.render().should.equal('<li class="completed_true"><input type="checkbox" checked onchange="changeCheckedStatus(event, undefined)"><span>Apple</span> <span>(<em>Sweet</em>)</span> <button onclick="removeItemButtonClicked(undefined)"><span class="remove-button">X</span></button></li>');
   });
 });
 
@@ -116,8 +112,6 @@ describe('ShoppingList', function() {
     list.addItem(apple);
     list.addItem(apple);
 
-    list
-      .render()
-      .should.equal(`<ul>${list.items[0].render(0)}${list.items[1].render(1)}${list.items[2].render(2)}</ul>`);
+    list.render().should.equal(`<ul>${list.items[0].render(0)}${list.items[1].render(1)}${list.items[2].render(2)}</ul>`);
   });
 });

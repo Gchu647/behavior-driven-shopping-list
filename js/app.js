@@ -21,10 +21,10 @@
     }
 
     content.innerHTML = list.render();
-  }
+  };
 
   w.removeItemButtonClicked = function(idx) {
     list.items.splice(idx, 1);
     content.innerHTML = list.render();
-  }
+  };
 })(window);

@@ -2,21 +2,26 @@ html {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
+
 body {
   display: flex;
   justify-content: flex-start;
-  background: hsl(200, 50%, 75%)
+  background: hsl(200, 50%, 75%);
 }
+
 form {
   display: flex;
   flex-direction: column;
 }
+
 label {
   margin-bottom: 10px;
 }
+
 input {
   margin-right: 20px;
 }
+
 input#title,
 input#description {
   margin-bottom: 20px;
@@ -24,28 +29,34 @@ input#description {
   line-height: 1rem;
   padding: 5px;
 }
-input[type=checkbox] {
+
+input[type='checkbox'] {
   transform: scale(1.5);
 }
+
 button {
   margin-right: 20px;
   font-size: 1rem;
   width: 180px;
 }
+
 ul {
   display: flex;
   flex-direction: column;
   padding: 0;
 }
+
 li {
   display: flex;
   align-items: center;
   justify-content: space-between;
   list-style-type: none;
 }
+
 li.completed_true > span {
   text-decoration: line-through;
 }
+
 li button {
   display: flex;
   justify-content: center;
@@ -56,6 +67,7 @@ li button {
   height: 25px;
   margin: 10px;
 }
+
 #container {
   display: flex;
   flex-direction: row;
@@ -64,12 +76,14 @@ li button {
   width: 100%;
   font-size: 1.5rem;
 }
+
 #container-left {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   width: 25%;
 }
+
 #container-right {
   display: flex;
   flex-direction: column;
@@ -81,12 +95,15 @@ li button {
   background-image: url('https://img00.deviantart.net/a5ab/i/2008/278/b/3/notebook_texture_by_xaliaphous.jpg');
   background-repeat: no-repeat;
 }
+
 #container-right-title {
   font-size: 2rem;
   padding-top: 65px;
   text-decoration: underline;
 }
+
 #add_shopping_list_item_button {
   margin-top: 20px;
   padding: 10px 0;
 }
+
