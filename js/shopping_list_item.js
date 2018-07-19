@@ -14,17 +14,15 @@ class ShoppingListItem {
   }
 
   render(idx) {
-    let str = `<li class="completed_${this.is_done}"><input type="checkbox" checked="${getCheckedStatus(this.is_done)}" onchange="changeCheckedStatus(event, ${idx})"><span>${this.name}</span> <span>${this.description}</span></li>`;
+    let str = `<li class="completed_${this.is_done}"><input type="checkbox" ${setChecked(this.is_done)} onchange="changeCheckedStatus(event, ${idx})"><span>${this.name}</span> <span>${this.description}</span></li>`;
     return str;
   }
 }
 
-function getCheckedStatus(is_done) {
-  if (is_done === false) {
-    console.log('getCheckedStatus = false');
-    return false;
+function setChecked(is_done) {
+  if (is_done === true) {
+    return 'checked';
   } else {
-    console.log('getCheckedStatus = true');
-    return true;
+    return '';
   }
 }
