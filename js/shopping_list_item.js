@@ -14,7 +14,8 @@ class ShoppingListItem {
   }
 
   render(idx) {
-    let str = `<li class="completed_${this.is_done}"><input type="checkbox" ${setChecked(this.is_done)} onchange="changeCheckedStatus(event, ${idx})"><span>${this.name}</span> <span>${this.description}</span></li>`;
+    console.log("index1: ", idx);
+    let str = `<li class="completed_${this.is_done}"><input type="checkbox" ${setChecked(this.is_done)} onchange="changeCheckedStatus(event, ${idx})"><span>${this.name}</span> <span>${this.description}</span> <button onclick="removeItemButtonClicked(${idx})">X</button></li>`;
     return str;
   }
 }

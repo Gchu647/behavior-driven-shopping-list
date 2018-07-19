@@ -13,8 +13,6 @@
   };
 
   w.changeCheckedStatus = function(event, idx) {
-    console.log(event);
-
     let item = list.items[idx];
     if (event.target.checked) {
       item.check();
@@ -23,6 +21,13 @@
       item.uncheck();
       console.log('uncheck');
     }
+
+    content.innerHTML = list.render();
+  }
+
+  w.removeItemButtonClicked = function(idx) {
+    console.log("index2: ", idx);
+    list.items.splice(idx, 1);
     content.innerHTML = list.render();
   }
 })(window);
