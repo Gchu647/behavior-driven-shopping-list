@@ -7,7 +7,7 @@ class ShoppingList {
     if (item instanceof ShoppingListItem) {
       this.items.push(item);
     } else {
-      throw new Error('Error!');
+      throw new Error('Invalid item.');
     }
   }
 
@@ -18,7 +18,7 @@ class ShoppingList {
     } else if (!item) {
       this.items.pop();
     } else {
-      throw new Error('Error!');
+      throw new Error('Invalid item.');
     }
   }
 

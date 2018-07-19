@@ -89,7 +89,7 @@ describe('ShoppingList', function() {
     (itemLastIndex instanceof ShoppingListItem).should.equal(true);
 
     // Test if obj throws error
-    expect(() => list.addItem()).to.throw('Error!');
+    expect(() => list.addItem()).to.throw('Invalid item.');
   });
 
   it('should have a "removeItem" method', function() {
@@ -104,7 +104,7 @@ describe('ShoppingList', function() {
     list.items.length.should.equal(1);
 
     // Test if obj throws error
-    expect(() => list.removeItem(donut)).to.throw('Error!');
+    expect(() => list.removeItem(donut)).to.throw('Invalid item.');
   });
 
   it('should have render method that lists items in <ul> format', function() {

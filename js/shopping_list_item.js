@@ -5,7 +5,7 @@ class ShoppingListItem {
       this.description = description;
       this.is_done = false;
     } else {
-      alert('Input must not be empty!');
+      throw new Error('Item name must not be empty.');
     }
   }
 
@@ -19,7 +19,6 @@ class ShoppingListItem {
 
   render(idx) {
     let str = '';
-    console.log(this.description);
     if (!this.description) {
       str = `<li class="completed_${this.is_done}"><input type="checkbox" ${setChecked(this.is_done)} onchange="changeCheckedStatus(event, ${idx})"><span>${this.name}</span> <button onclick="removeItemButtonClicked(${idx})"><span class="remove-button">X</span></button></li>`;
     } else {
