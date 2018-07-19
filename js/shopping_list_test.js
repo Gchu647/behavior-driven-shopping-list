@@ -39,7 +39,7 @@ describe('ShoppingListItem', function() {
   });
 
   it('should have a method named "check"', function() {
-    item.check.should.be.a('function');
+    item.check.should.be.a('function'); // expect(item).to.respondTo('check')
     item.check();
     item.is_done.should.equal(true);
   });
@@ -70,15 +70,15 @@ describe('ShoppingList', function() {
   });
 
   it('should be a Class', function() {
-    (new ShoppingList().constructor === ShoppingList.prototype.constructor).should.equal(true);
+    (list.constructor === ShoppingList.prototype.constructor).should.equal(true);
   });
 
   it('should have a property named "items"', function() {
-    new ShoppingList().hasOwnProperty('items').should.equal(true);
+    list.hasOwnProperty('items').should.equal(true);
   });
 
   it('should initialize "items" as an empty Array', function() {
-    Array.isArray(list.items).should.equal(true); // Testing if it is an Array
+    Array.isArray(list.items).should.equal(true); // Testing if it is an Array (check chai tools)
     list.items.should.be.empty;
   });
 

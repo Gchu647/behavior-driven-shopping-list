@@ -4,11 +4,10 @@ class ShoppingList {
   }
 
   addItem(item) {
-    if (item instanceof ShoppingListItem) {
-      this.items.push(item);
-    } else {
+    if (!(item instanceof ShoppingListItem)) {
       throw new Error('Invalid item.');
     }
+    this.items.push(item);
   }
 
   removeItem(item) {

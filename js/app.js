@@ -1,6 +1,5 @@
 (function(w) {
   const list = new ShoppingList();
-  list.render();
 
   w.add_to_shopping_list = function() {
     let content = document.getElementById('content');

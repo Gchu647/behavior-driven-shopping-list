@@ -1,12 +1,9 @@
 class ShoppingListItem {
   constructor(name, description) {
-    if (name.length > 0) {
-      this.name = name;
-      this.description = description;
-      this.is_done = false;
-    } else {
-      throw new Error('Item name must not be empty.');
-    }
+    if (!name) { throw new Error('Item name must not be empty.'); }
+    this.name = name;
+    this.description = description;
+    this.is_done = false;
   }
 
   check() {
@@ -18,21 +15,18 @@ class ShoppingListItem {
   }
 
   render(idx) {
-    let str = '';
-    if (!this.description) {
-      str = `<li class="completed_${this.is_done}"><input type="checkbox" ${setChecked(this.is_done)} onchange="changeCheckedStatus(event, ${idx})"><span>${this.name}</span> <button onclick="removeItemButtonClicked(${idx})"><span class="remove-button">X</span></button></li>`;
-    } else {
-      str = `<li class="completed_${this.is_done}"><input type="checkbox" ${setChecked(this.is_done)} onchange="changeCheckedStatus(event, ${idx})"><span>${this.name}</span> <span>(<em>${this.description}</em>)</span> <button onclick="removeItemButtonClicked(${idx})"><span class="remove-button">X</span></button></li>`;
-    }
+    let descStr = this.description ? `<span>(<em>${this.description}</em>)</span>` : '';
+    let checkedStr = this.is_done ? 'checked' : '';
+    let str = (
+`<li class="completed_${this.is_done}">
+  <input type="checkbox" ${checkedStr} onchange="changeCheckedStatus(event, ${idx})">
+  <span>${this.name}</span>${descStr}
+  <button onclick="removeItemButtonClicked(${idx})">
+    <span class="remove-button">X</span>
+  </button>
+</li>`
+);
 
     return str;
-  }
-}
-
-function setChecked(is_done) {
-  if (is_done === true) {
-    return 'checked';
-  } else {
-    return '';
   }
 }
