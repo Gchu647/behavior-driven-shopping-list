@@ -16,17 +16,14 @@
     let item = list.items[idx];
     if (event.target.checked) {
       item.check();
-      console.log('check');
     } else {
       item.uncheck();
-      console.log('uncheck');
     }
 
     content.innerHTML = list.render();
   }
 
   w.removeItemButtonClicked = function(idx) {
-    console.log("index2: ", idx);
     list.items.splice(idx, 1);
     content.innerHTML = list.render();
   }

@@ -5,20 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Courgette" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div id="content"></div>
-
-  <form action="">
-    <label for="title">Title</label>
-    <input id="title" type="text">
-    <label for="description">Description</label>
-    <input id="description" type="text">
-  </form>
-
-  <button id="add_shopping_list_item_button" onclick="add_to_shopping_list()">Add to Shopping List</button>
-
+  <div id="container">
+    <div id="container-left">
+      <form action="">
+        <label for="title">Item Name:</label>
+        <input id="title" type="text">
+        <label for="description">Description:</label>
+        <input id="description" type="text">
+      </form>
+      <button id="add_shopping_list_item_button" onclick="add_to_shopping_list()">Add to Shopping List</button>
+    </div>
+    <div id="container-right">
+      <span id="container-right-title">Shopping List</span>
+      <div id="content"></div>
+    </div>
+  </div>
   <script src="js/shopping_list_item.js"></script>
   <script src="js/shopping_list.js"></script>
   <script src="js/shopping_list_test.js"></script>

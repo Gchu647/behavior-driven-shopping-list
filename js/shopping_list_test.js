@@ -54,12 +54,11 @@ describe('ShoppingListItem', function() {
     item.render.should.be.a('function');
     item
       .render()
-      .should.equal('<li class="completed_false"><input type="checkbox"  onchange="changeCheckedStatus(event, undefined)"><span>Apple</span> <span>Sweet</span> <button onclick="removeItemButtonClicked(undefined)">X</button></li>');
+      .should.equal('<li class="completed_false"><input type="checkbox"  onchange="changeCheckedStatus(event, undefined)"><span>Apple</span> <span>(<em>Sweet</em>)</span> <button onclick="removeItemButtonClicked(undefined)">X</button></li>');
     item.check();
-    // Testing when the checkbox is checked
     item
       .render()
-      .should.equal('<li class="completed_true"><input type="checkbox" checked onchange="changeCheckedStatus(event, undefined)"><span>Apple</span> <span>Sweet</span> <button onclick="removeItemButtonClicked(undefined)">X</button></li>');
+      .should.equal('<li class="completed_true"><input type="checkbox" checked onchange="changeCheckedStatus(event, undefined)"><span>Apple</span> <span>(<em>Sweet</em>)</span> <button onclick="removeItemButtonClicked(undefined)">X</button></li>');
   });
 });
 
