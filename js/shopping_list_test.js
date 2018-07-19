@@ -8,6 +8,7 @@ describe('ShoppingListItem', function() {
     item = new ShoppingListItem('Apple', 'Sweet');
   });
 
+  // Testing if ShoppingListItem instance is created using the ShoppingListItem class
   it('should be a Class', function() {
     (new ShoppingListItem().constructor === ShoppingListItem.prototype.constructor).should.equal(true);
   });
@@ -33,8 +34,8 @@ describe('ShoppingListItem', function() {
     const itemNull = new ShoppingListItem('Apple', null);
     const itemObject = new ShoppingListItem('Apple', {});
 
-    itemNull.name.should.be.a('string');
-    itemObject.description.should.not.be.a('string');
+    expect(itemNull.description).to.not.be.a('string');
+    expect(itemObject.description).to.not.be.a('string');
   });
 
   it('should have a method named "check"', function() {
@@ -55,6 +56,7 @@ describe('ShoppingListItem', function() {
       .render()
       .should.equal('<li class="completed_false"><input type="checkbox"  onchange="changeCheckedStatus(event, undefined)"><span>Apple</span> <span>Sweet</span> <button onclick="removeItemButtonClicked(undefined)">X</button></li>');
     item.check();
+    // Testing when the checkbox is checked
     item
       .render()
       .should.equal('<li class="completed_true"><input type="checkbox" checked onchange="changeCheckedStatus(event, undefined)"><span>Apple</span> <span>Sweet</span> <button onclick="removeItemButtonClicked(undefined)">X</button></li>');
@@ -64,12 +66,12 @@ describe('ShoppingListItem', function() {
 describe('ShoppingList', function() {
   let list;
   let apple;
-  let donuts;
+  let donut;
 
   beforeEach(function() {
     list = new ShoppingList();
     apple = new ShoppingListItem('Apple', 'Sweet');
-    donuts = {}; // Not Shopping List Item
+    donut = {}; // Not Shopping List Item
   });
 
   it('should be a Class', function() {
@@ -81,7 +83,7 @@ describe('ShoppingList', function() {
   });
 
   it('should initialize "items" as an empty Array', function() {
-    Array.isArray(list.items).should.equal(true);
+    Array.isArray(list.items).should.equal(true); // Testing if it is an Array
     list.items.should.be.empty;
   });
 
@@ -97,7 +99,6 @@ describe('ShoppingList', function() {
 
   it('should have a "removeItem" method', function() {
     // Test if obj pushed in is a ShoppingList item
-    // let itemLastIndex = list.items[list.items.length - 1];
     list.addItem(apple);
     list.addItem(apple);
     list.addItem(apple);
@@ -108,7 +109,7 @@ describe('ShoppingList', function() {
     list.items.length.should.equal(1);
 
     // Test if obj throws error
-    expect(() => list.removeItem(donuts)).to.throw('Error!');
+    expect(() => list.removeItem(donut)).to.throw('Error!');
   });
 
   it('should have render method that lists items in <ul> format', function() {
